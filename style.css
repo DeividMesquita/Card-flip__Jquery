@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    background-image: url(img/fundo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+#card .front, #card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; 
+    transition: transform 0.6s;
+}
+
+.front img, .back img {
+    border-radius: 35px;
+}
+
+#card .front {
+    transform: rotateY(0deg);
+}
+
+#card .back {
+    transform: rotateY(180deg);
+}
+
+#card:hover .front {
+    transform: rotateY(-180deg); 
+}
+
+#card:hover .back {
+    transform: rotateY(0deg);
+}
